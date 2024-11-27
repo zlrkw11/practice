@@ -47,7 +47,7 @@ app.delete("/api/notes/:id", (req, res) => {
   res.status(204).end();
 });
 
-app.post("api/notes", (req, res) => {
+app.post("/api/notes", (req, res) => {
   const note = req.body;
   console.log(note);
   res.json(note);
