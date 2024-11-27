@@ -23,7 +23,7 @@ let notes = [
 
 const app = http.createServer((req, res) => {
   res.writeHead(200, { "Content-Type": "text/plain" });
-  res.end(json.stringify(notes));
+  res.end(JSON.stringify(notes));
 });
 
 const PORT = 3001;
