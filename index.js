@@ -85,6 +85,8 @@ app.post("/api/notes", (req, res) => {
   res.json(note);
 });
 
+app.use(unknownEndpoint);
+
 const PORT = 3001;
 app.listen(PORT);
 console.log(`Server running on port ${PORT}`);
