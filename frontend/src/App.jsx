@@ -8,7 +8,6 @@ const App = () => {
 
   return (
     <div>
-      <h1>Course: {course}</h1>
       <p>This is a test paragraph to ensure the app is rendering.</p>
       <Header course={course} />
       <Content parts={parts} />
@@ -19,16 +18,20 @@ const App = () => {
 
 const Header = ({ course }) => <h2>{course}</h2>;
 
-const Content = ({ parts }) => (
-  <div>
-    {parts.map((part, index) => (
-      <p key={index}>
-        {part.name} - {part.exercises} exercises
-      </p>
-    ))}
-  </div>
-);
-
+const Content = ({ parts }) => {
+  const Part = ({ part }) => (
+    <div>
+      {part.name} - {part.exercises} exercises
+    </div>
+  );
+  return (
+    <div>
+      <Part part={parts[0]} />
+      <Part part={parts[1]} />
+      <Part part={parts[2]} />
+    </div>
+  );
+};
 const Total = ({ parts }) => {
   const total = parts.reduce((sum, part) => sum + part.exercises, 0);
   return <p>Total number of exercises: {total}</p>;
