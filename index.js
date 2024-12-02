@@ -38,7 +38,7 @@ const unknownEndpoint = (req, res) => {
 };
 
 app.get("/", (req, res) => {
-  res.send("<h1>Hello World</h1>");
+  res.send("<h2>Hello World, this is zl's router</h2>");
 });
 
 app.get("/api/notes", (req, res) => {
