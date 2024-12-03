@@ -1,6 +1,11 @@
 const express = require("express");
 const app = express();
+const cors = required("cors");
+const corsOptions = {
+  origin: ["http://localhost:3001"],
+};
 
+app.use(cors(corsOptions));
 let notes = [
   {
     id: 1,
